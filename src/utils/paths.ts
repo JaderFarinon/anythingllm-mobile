@@ -1,5 +1,6 @@
 export const PATHS = {
   onboarding: {
+    language_selection: 'LanguageSelection',
     welcome: 'Welcome',
     model_selection: 'ModelSelection',
     survey: 'Survey',

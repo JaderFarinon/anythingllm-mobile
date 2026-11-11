@@ -1,4 +1,5 @@
 import OnboardingWelcome from "./Onboarding/Welcome";
+import OnboardingLanguageSelection from "./Onboarding/LanguageSelection";
 import OnboardingModelSelection from "./Onboarding/ModelSelection";
 import OnboardingSurvey from "./Onboarding/Survey";
 import OnboardingDataHandling from "./Onboarding/DataHandling";
@@ -15,6 +16,7 @@ import DevToolsMenu from "./Dev";
 
 export default {
   OnboardingWelcome,
+  OnboardingLanguageSelection,
   OnboardingModelSelection,
   OnboardingSurvey,
   OnboardingDataHandling,

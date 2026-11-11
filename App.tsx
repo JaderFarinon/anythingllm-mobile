@@ -108,6 +108,16 @@ const App = observer(() => {
                         {!onboardingCompleted && (
                           <>
                             <Drawer.Screen
+                              name={PATHS.onboarding.language_selection}
+                              component={gestureHandlerRootHOC(
+                                Screens.OnboardingLanguageSelection,
+                              )}
+                              options={{
+                                headerShown: false,
+                                swipeEnabled: false,
+                              }}
+                            />
+                            <Drawer.Screen
                               name={PATHS.onboarding.welcome}
                               component={gestureHandlerRootHOC(
                                 Screens.OnboardingWelcome,

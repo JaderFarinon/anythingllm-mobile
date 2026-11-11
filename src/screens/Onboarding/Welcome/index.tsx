@@ -28,10 +28,9 @@ export default function OnboardingWelcome() {
         style={{ backgroundColor: "#131314", position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }}
       />
       <SafeView scrollable={false} safeAreaClassNames="bg-transparent" containerClassNames="my-auto" containerStyle={{ paddingBottom: insets.bottom, paddingTop: insets.top + 20 }}>
-        <View className="flex flex-col h-full justify-between py-4">
+          <View className="flex flex-col h-full justify-between py-4">
           <View className="flex flex-col justify-center items-center gap-y-2">
-            <Text className="text-[#B2DDFF] text-xl">{t('onboarding.welcome.title')}</Text>
-            <Image source={require("@/assets/logo/anything-llm.png")} resizeMode="contain" style={{ width: 220, height: 32 }} />
+            <Text className="text-white text-4xl font-bold">NEXO</Text>
           </View>
           <Image
             source={require("@/assets/onboarding/welcome.png")}
@@ -50,6 +49,7 @@ export default function OnboardingWelcome() {
           >
             <Text className="text-[--dark] font-bold text-center">{t('onboarding.welcome.get_started')}</Text>
           </TouchableOpacity>
+          <Text className="text-[#B2DDFF] text-xs text-center">AnythingLLM Based</Text>
         </View>
       </SafeView>
     </React.Fragment>

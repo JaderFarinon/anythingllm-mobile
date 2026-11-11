@@ -13,11 +13,15 @@ type InitialRoute = {
 
 async function determineInitialRoute() {
   await repairPartialOnboarding();
+  const languageCompleted = await uiStore.getFromStorage('onboarding_language_completed', false);
   const welcomeCompleted = await uiStore.getFromStorage('onboarding_welcome_completed', false);
   const modelSelectionCompleted = await uiStore.getFromStorage('onboarding_model_selection_completed', false);
   const surveyCompleted = await uiStore.getFromStorage('onboarding_survey_completed', false);
   const dataHandlingCompleted = await uiStore.getFromStorage('onboarding_data_handling_completed', false);
 
+  // Offer the language choice once during first-run setup, before any onboarding copy is shown.
+  // Existing installs that already finished setup keep going straight to the app.
+  if (!languageCompleted && !dataHandlingCompleted) return PATHS.onboarding.language_selection;
   if (!welcomeCompleted) return PATHS.onboarding.welcome;
   else if (!modelSelectionCompleted) return PATHS.onboarding.model_selection;
   else if (!surveyCompleted) return PATHS.onboarding.survey;

@@ -5,6 +5,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { NativeEventEmitter } from 'react-native';
 
 export type StorageKeys =
+  'onboarding_language_completed' |
   'onboarding_welcome_completed' |
   'onboarding_model_selection_completed' |
   'onboarding_survey_completed' |
@@ -56,6 +57,7 @@ export class UIStore {
     AVAILABLE_TO_DOWNLOAD: 'available_to_download',
   } as const;
   static readonly STORAGE_KEYS: StorageKeys[] = [
+    'onboarding_language_completed',
     'onboarding_welcome_completed',
     'onboarding_model_selection_completed',
     'onboarding_survey_completed',

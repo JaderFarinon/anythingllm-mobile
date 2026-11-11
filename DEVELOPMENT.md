@@ -27,6 +27,33 @@ cd ios && pod install && cd ..
 npx react-native run-ios
 ```
 
+### Windows
+
+Use the PowerShell launcher to keep Metro running in the background:
+
+```powershell
+.\iniciar-mobile.ps1
+.\iniciar-mobile.ps1 status
+.\iniciar-mobile.ps1 parar
+```
+
+With an Android emulator open or a phone connected with USB debugging enabled,
+run `yarn android` in this folder to build and install the app.
+
+On Windows, `rodar-android.ps1` selects JDK 17 and the default Android SDK,
+checks the required SDK packages, starts the first configured emulator if no
+device is connected, then builds and installs the app:
+
+```powershell
+.\rodar-android.ps1
+```
+
+If it reports missing SDK packages, install Android API 36 from **Tools > SDK
+Manager > SDK Platforms**. Under **SDK Tools**, install **Android SDK Build-Tools
+36.0.0**, **Android SDK Platform-Tools**, **Android Emulator**, and **NDK (Side
+by side) 27.1.12297006**. Create an emulator from **Tools > Device Manager** if
+you do not have an Android phone connected.
+
 ## On-device runtime (llama.rn)
 
 On-device inference uses [llama.rn](https://github.com/mybigday/llama.rn), which requires the React Native
